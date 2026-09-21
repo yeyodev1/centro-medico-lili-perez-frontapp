@@ -36,7 +36,7 @@ $ease: cubic-bezier(0.22, 1, 0.36, 1);
   color: $accent-deep;
 }
 
-@mixin display($size: $display-md, $weight: 500) {
+@mixin display($size: $display-md, $weight: 800) {
   font-family: $font-display;
   font-size: $size;
   font-weight: $weight;
