@@ -74,8 +74,8 @@ function submit() {
   &::before {
     content: '';
     position: absolute;
-    left: -6rem;
-    bottom: -8rem;
+    left: -10rem;
+    bottom: -12rem;
     display: none;
     width: 26rem;
     height: 26rem;
