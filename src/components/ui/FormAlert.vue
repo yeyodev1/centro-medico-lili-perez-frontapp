@@ -31,6 +31,13 @@ const icons = {
     font-size: 1.1rem;
   }
 
+  // El `text-wrap: pretty` global deja renglones muy cortos en una caja tan angosta.
+  span {
+    flex: 1 1 0;
+    min-width: 0;
+    text-wrap: wrap;
+  }
+
   // Tinta oscura sobre fondo tenue: el rojo/verde puro no llega a contraste AA en texto.
   &--error {
     background: $danger-bg;
