@@ -16,7 +16,7 @@ export function resolveApiBaseUrl(): string {
   const isLocal = ['localhost', '127.0.0.1'].includes(host)
 
   let fallback = 'https://api.cliente.com/api'
-  if (isLocal) fallback = 'http://localhost:8110/api'
+  if (isLocal) fallback = 'http://localhost:8120/api'
   else if (host.includes('-front')) {
     fallback = `${window.location.protocol}//${host.replace('-front', '-back')}/api`
   }
