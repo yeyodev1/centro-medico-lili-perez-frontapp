@@ -13,13 +13,63 @@ const routes: Array<RouteRecordRaw> = [
     path: '/login',
     name: 'Login',
     component: () => import('@/views/LoginView.vue'),
-    meta: { title: 'Ingresar', guestOnly: true },
+    meta: { title: 'Acceso del personal', guestOnly: true },
   },
   {
-    path: '/cuenta',
-    name: 'Account',
-    component: () => import('@/views/AccountView.vue'),
-    meta: { title: 'Mi cuenta', requiresAuth: true },
+    path: '/resultados',
+    name: 'Results',
+    component: () => import('@/views/ResultsView.vue'),
+    meta: { title: 'Consulta tus resultados' },
+  },
+  {
+    // El panel lleva su propio layout: App.vue oculta el header y el footer públicos.
+    path: '/panel',
+    component: () => import('@/layout/PanelLayout.vue'),
+    meta: { requiresAuth: true, panel: true },
+    children: [
+      {
+        path: '',
+        name: 'Panel',
+        component: () => import('@/views/panel/DashboardView.vue'),
+        meta: { title: 'Resumen' },
+      },
+      {
+        path: 'pacientes',
+        name: 'Patients',
+        component: () => import('@/views/panel/PatientsView.vue'),
+        meta: { title: 'Pacientes' },
+      },
+      {
+        path: 'pacientes/nuevo',
+        name: 'PatientNew',
+        component: () => import('@/views/panel/PatientFormView.vue'),
+        meta: { title: 'Nuevo paciente' },
+      },
+      {
+        path: 'pacientes/:id',
+        name: 'PatientDetail',
+        component: () => import('@/views/panel/PatientDetailView.vue'),
+        meta: { title: 'Paciente' },
+      },
+      {
+        path: 'pacientes/:id/editar',
+        name: 'PatientEdit',
+        component: () => import('@/views/panel/PatientFormView.vue'),
+        meta: { title: 'Editar paciente' },
+      },
+      {
+        path: 'usuarios',
+        name: 'Users',
+        component: () => import('@/views/panel/UsersView.vue'),
+        meta: { title: 'Usuarios', requiresAdmin: true },
+      },
+      {
+        path: 'cuenta',
+        name: 'Account',
+        component: () => import('@/views/AccountView.vue'),
+        meta: { title: 'Mi cuenta' },
+      },
+    ],
   },
   {
     path: '/:pathMatch(.*)*',
@@ -54,7 +104,11 @@ router.beforeEach(async (to) => {
   }
 
   if (to.meta.guestOnly && userStore.isAuthenticated) {
-    return { name: 'Account', replace: true }
+    return { name: 'Panel', replace: true }
+  }
+
+  if (to.meta.requiresAdmin && !userStore.isAdmin) {
+    return { name: 'Panel', replace: true }
   }
 })
 
