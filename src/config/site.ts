@@ -8,7 +8,7 @@ export const site = {
   tagline: 'Especialidades Médicas',
   description:
     'Consulta y descarga tus resultados de laboratorio e imágenes en línea, solo con tu número de cédula.',
-  url: 'https://cliente.com',
+  url: 'https://centro-medico-lili-perez-frontapp.vercel.app',
   // El correo del centro llegó cortado en el PDF de ejemplo: pendiente de confirmar.
   email: '',
   address: 'Av. Juan Péndola Mz. 24 Solar 15 y Domingo Comín, Guayaquil',
