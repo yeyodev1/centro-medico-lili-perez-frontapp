@@ -125,13 +125,13 @@ const fileInfo = computed(() => `${format.value} · ${formatBytes(props.study.fi
   }
 
   &__meta {
-    @include flex(row, flex-start, flex-start, 0.75rem 1.75rem);
+    @include flex(row, flex-start, flex-start, 0.75rem 1.25rem);
     flex-wrap: wrap;
   }
 
   &__datum {
     // Dos por fila en el celular: cuatro datos apilados alargan demasiado la tarjeta.
-    flex: 1 1 8.5rem;
+    flex: 1 1 7rem;
     min-width: 0;
 
     @include from('md') {
