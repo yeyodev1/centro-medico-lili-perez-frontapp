@@ -75,7 +75,8 @@ button {
   cursor: pointer;
 }
 
-input,
+// Checkbox y radio quedan fuera: con width 100% y padding se deforman.
+input:not([type='checkbox']):not([type='radio']),
 select,
 textarea {
   font: inherit;
