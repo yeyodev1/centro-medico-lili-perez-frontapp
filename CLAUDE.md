@@ -11,7 +11,7 @@ Desplegado en Vercel. El backend vive en el repo hermano `*-backapp` (Express 5 
 
 ```sh
 pnpm install
-pnpm dev          # :5173 — necesita el backapp en :8100
+pnpm dev          # :5183 — necesita el backapp en :8110
 pnpm build        # vue-tsc -b && vite build (el type-check corre acá)
 pnpm typecheck
 pnpm format
