@@ -8,23 +8,23 @@ $accent-deep: color.adjust($accent, $lightness: -12%);
 $accent-soft: color.mix($accent, #ffffff, 14%);
 
 // Superficies
-$paper: #fdfcfa; // fondo base
+$paper: #f6f8fc; // fondo base
 $surface: #ffffff; // superficies elevadas
-$sand: #f1ece6; // bloques suaves
-$line: #e7e1d9; // bordes
+$sand: #eaf0fa; // bloques suaves
+$line: #dbe3f0; // bordes
 
 // Texto
-$ink: #191423; // texto principal
-$ink-soft: #4a4552; // texto secundario
-$ink-muted: #8a8590; // terciario / labels
+$ink: #0e1a3a; // texto principal
+$ink-soft: #42506e; // texto secundario
+$ink-muted: #6f7c97; // terciario / labels
 
-$overlay: rgba(#100c14, 0.55);
+$overlay: rgba(#0a1230, 0.55);
 
 // Estados
-$success: #3bb77e;
+$success: #1f9d6b;
 $warning: #d9a441;
 $info: #6a8caf;
-$danger: #c2554f;
+$danger: #c8443d;
 $success-bg: rgba($success, 0.12);
 $warning-bg: rgba($warning, 0.12);
 $info-bg: rgba($info, 0.12);
