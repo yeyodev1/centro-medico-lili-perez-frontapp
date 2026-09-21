@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   server: {
-    port: 5173,
+    port: 5183,
     // Hosts desde los que se sirve el dev server a través de túneles (cloudflared).
     allowedHosts: ['.bakano.ec', '.trycloudflare.com'],
   },
