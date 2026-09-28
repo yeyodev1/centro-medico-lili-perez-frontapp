@@ -35,7 +35,7 @@ watch(
   <aside class="side">
     <div class="side__bar">
       <RouterLink class="side__brand" to="/panel">
-        <span class="side__brand-name">{{ site.shortName }}</span>
+        <span class="side__brand-name">{{ site.name }}</span>
         <span class="side__brand-sub">{{ panelCopy.brand }}</span>
       </RouterLink>
       <button

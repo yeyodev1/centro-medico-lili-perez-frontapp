@@ -4,7 +4,6 @@
  */
 export const site = {
   name: 'Centro Médico Dra. Lili Pérez',
-  shortName: 'Dra. Lili Pérez',
   tagline: 'Especialidades Médicas',
   description:
     'Consulta y descarga tus resultados de laboratorio e imágenes en línea, solo con tu número de cédula.',

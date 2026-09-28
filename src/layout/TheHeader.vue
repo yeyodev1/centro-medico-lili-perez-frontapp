@@ -53,12 +53,9 @@ onUnmounted(() => document.removeEventListener('click', onDocumentClick))
   <header ref="root" class="header" @keydown.esc="closeWithEscape">
     <div class="header__inner">
       <RouterLink to="/" class="header__brand" :aria-label="`${site.name}, ${COPY.home}`">
-        <svg class="header__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <rect width="64" height="64" rx="14" />
-          <path d="M26 14h12v12h12v12H38v12H26V38H14V26h12z" />
-        </svg>
+        <img class="header__mark" src="/logo-mark.png" alt="" width="48" height="48" />
         <span class="header__names">
-          <span class="header__name">{{ site.shortName }}</span>
+          <span class="header__name">{{ site.name }}</span>
           <span class="header__tagline">{{ site.tagline }}</span>
         </span>
       </RouterLink>
@@ -138,15 +135,13 @@ onUnmounted(() => document.removeEventListener('click', onDocumentClick))
 
   &__mark {
     flex: 0 0 auto;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    object-fit: contain;
 
-    rect {
-      fill: $accent;
-    }
-
-    path {
-      fill: $surface;
+    @include from('lg') {
+      width: 3rem;
+      height: 3rem;
     }
   }
 
@@ -156,11 +151,17 @@ onUnmounted(() => document.removeEventListener('click', onDocumentClick))
     line-height: 1.2;
   }
 
+  // El nombre completo es largo: en celular baja de tamaño y puede partirse en dos líneas.
   &__name {
     font-family: $font-display;
-    font-size: 1.125rem;
+    font-size: 0.95rem;
     font-weight: 800;
     letter-spacing: -0.01em;
+    color: $accent;
+
+    @include from('lg') {
+      font-size: 1.125rem;
+    }
   }
 
   &__tagline {
